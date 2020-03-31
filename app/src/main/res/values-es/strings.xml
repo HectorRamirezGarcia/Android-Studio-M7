@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="first_fragment_label">Primer Label</string>
+    <string name="second_fragment_label">Segundo Label</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="app_name">Trivial</string>
+    <string name="question">Pregunta</string>
+    <string name="check">Comprueba</string>
+    <string name="correct">Buen trabajo!</string>
+    <string name="incorrect">Repuesta incorrecta</string>
+    <array name="all_questions">
+        <item>Cuál es la capital de Bhutan?;Ouagadougou;Phnom Penh;*Thimphu;Zgighiti</item>
+        <item>Quien es el jugador de futbol con mas balones de oro?;Cristiano Ronaldo;*Lionel Messi;Johan Cruyff;Kevin Keegan</item>
+    </array>
+</resources>

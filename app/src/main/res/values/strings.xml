@@ -1,0 +1,24 @@
+<resources>
+    <string name="first_fragment_label">Firts Label</string>
+    <string name="second_fragment_label">Second Label</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Trivial</string>
+    <string name="question">Question</string>
+    <string name="check">Check</string>
+    <string name="correct">Good joob!</string>
+    <string name="incorrect">Incorrect answer</string>
+    <!--
+    <string name="question_content">What is the capital of Bhutan?</string>
+    <array name="answer">
+        <item>Ougadougou</item>
+        <item>Pnhom Penh</item>
+        <item>Thimphu</item>
+        <item>Zgighiti</item>
+    </array>
+    <integer name="correct_answer">2</integer>
+    -->
+    <array name="all_questions">
+        <item>What is the capital of Bhutan?;Ouagadougou;Phnom Penh;*Thimphu;Zgighiti</item>
+        <item>Who is the soccer player with the most golden balls?;Cristiano Ronaldo;*Lionel Messi;Johan Cruyff;Kevin Keegan</item>
+    </array>
+</resources>
