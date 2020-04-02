@@ -8,28 +8,34 @@
 
     <TextView
         android:id="@+id/titleJugadores"
-        android:layout_width="281dp"
-        android:layout_height="75dp"
+        android:layout_width="296dp"
+        android:layout_height="89dp"
         android:layout_marginStart="65dp"
-        android:layout_marginTop="106dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="65dp"
-        android:layout_marginBottom="45dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Jugadores"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.407"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerid"
-        android:layout_width="392dp"
-        android:layout_height="214dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAddUsers"
+    <RelativeLayout
+        android:layout_width="320dp"
+        android:layout_height="226dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleJugadores"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/titleJugadores">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
 
     <Button
         android:id="@+id/buttonAddUsers"

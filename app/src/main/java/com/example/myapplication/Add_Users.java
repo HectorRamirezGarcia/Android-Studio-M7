@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +13,8 @@ import android.widget.TextView;
 
 public class Add_Users extends AppCompatActivity {
 
+    RecyclerView recycler;
+
     int max_users = 6;
     String[] array_noms = new String[max_users];
 
@@ -19,10 +23,10 @@ public class Add_Users extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.add_jugadores);
 
-        final Button afegirUsuari = findViewById(R.id.Add_UserText);
-        afegirUsuari.setOnClickListener(new View.OnClickListener() {
+        final Button afegirusuari = findViewById(R.id.buttonAddUsers);
+        afegirusuari.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 goToAfegirUsuaris();
             }
@@ -31,17 +35,19 @@ public class Add_Users extends AppCompatActivity {
     @Override
     protected void onActivityResult (int requestCode, int resultCode, @Nullable Intent data){
     super.onActivityResult(requestCode, resultCode, data);
+        recycler = (RecyclerView) findViewById(R.id.recyclerID);
+        recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
 
-        if (requestCode == 1) {
-           if (resultCode == RESULT_OK) {
-              array_noms = data.getStringArrayExtra("array_noms");
-              contador = data.getIntExtra("contador", 0);
-
-               TextView txtResultado = findViewById(R.id.recyclerid);
-               txtResultado.setText(array_noms[0] + " -- " + array_noms[1] + " ------> " + contador);
-                }
+        if(requestCode==1){
+            if(resultCode == RESULT_OK){
+                array_noms = data.getStringArrayExtra("array_noms");
             }
         }
+        AdapterDatos adapter = new AdapterDatos(array_noms);
+        recycler.setAdapter(adapter);
+
+    }
+
     private void goToAfegirUsuaris() {
         Intent intent = new Intent(this, Add_TextforUsers.class);
         intent.putExtra("array_noms", array_noms);
