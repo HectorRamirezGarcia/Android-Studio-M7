@@ -4,23 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_retro"
     tools:context=".Add_TextforUsers">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="352dp"
+        android:layout_height="81dp"
         android:layout_marginStart="176dp"
         android:layout_marginTop="144dp"
         android:layout_marginEnd="176dp"
         android:layout_marginBottom="101dp"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="@font/aldrich"
         android:text="Indicame el nombre de los jugadores"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/editTextNameUser"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextNameUser"
@@ -28,10 +32,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
         android:layout_marginEnd="99dp"
-        android:layout_marginBottom="110dp"
+        android:layout_marginBottom="116dp"
+        android:background="@drawable/prueba2"
         android:ems="10"
         android:fontFamily="sans-serif-smallcaps"
         android:inputType="textPersonName"
+        android:shadowColor="@color/colorAccent"
+        android:textColor="@color/cardview_light_background"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="@android:color/holo_purple"
+        android:textColorLink="@android:color/holo_purple"
         app:layout_constraintBottom_toTopOf="@+id/Add_UserText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -42,10 +52,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="162dp"
         android:layout_marginEnd="162dp"
-        android:layout_marginBottom="196dp"
-        android:fontFamily="sans-serif-smallcaps"
+        android:layout_marginBottom="208dp"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="@android:color/holo_purple"
+        android:backgroundTintMode="multiply"
+        android:fontFamily="@font/aldrich"
         android:text="Añadir"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorLink="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>
