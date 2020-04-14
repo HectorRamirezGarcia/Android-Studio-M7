@@ -35,16 +35,12 @@ public class Add_Users extends AppCompatActivity {
     @Override
     protected void onActivityResult (int requestCode, int resultCode, @Nullable Intent data){
     super.onActivityResult(requestCode, resultCode, data);
-        recycler = (RecyclerView) findViewById(R.id.recyclerID);
-        recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
 
         if(requestCode==1){
             if(resultCode == RESULT_OK){
                 array_noms = data.getStringArrayExtra("array_noms");
             }
         }
-        AdapterDatos adapter = new AdapterDatos(array_noms);
-        recycler.setAdapter(adapter);
 
     }
 
