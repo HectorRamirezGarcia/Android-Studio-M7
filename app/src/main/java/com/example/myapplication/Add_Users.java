@@ -15,15 +15,20 @@ public class Add_Users extends AppCompatActivity {
 
     RecyclerView recycler;
 
+    Button btn_startgame;
+
     int max_users = 6;
     String[] array_noms = new String[max_users];
 
-    int contador = 0;
+    int contador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_jugadores);
+
+        btn_startgame = findViewById(R.id.buttonStartGame);
+        btn_startgame.setVisibility(View.GONE);
 
         final Button afegirusuari = findViewById(R.id.buttonAddUsers);
         afegirusuari.setOnClickListener(new View.OnClickListener() {
@@ -31,7 +36,15 @@ public class Add_Users extends AppCompatActivity {
                 goToAfegirUsuaris();
             }
         });
+
+        btn_startgame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoStartGame();
+            }
+        });
     }
+
     @Override
     protected void onActivityResult (int requestCode, int resultCode, @Nullable Intent data){
     super.onActivityResult(requestCode, resultCode, data);
@@ -39,7 +52,18 @@ public class Add_Users extends AppCompatActivity {
         if(requestCode==1){
             if(resultCode == RESULT_OK){
                 array_noms = data.getStringArrayExtra("array_noms");
-            }
+                contador = data.getIntExtra("contador", 0);
+                TextView txtResultado = findViewById(R.id.resultado);
+                String resultado = "";
+                for (int i = 0; i < contador; i++){
+                    resultado += array_noms[i]+" ";
+                }
+                txtResultado.setText(resultado);
+
+                if (array_noms.length > 1 ) {
+                    btn_startgame.setVisibility(View.VISIBLE);
+                    }
+                }
         }
 
     }
@@ -49,5 +73,12 @@ public class Add_Users extends AppCompatActivity {
         intent.putExtra("array_noms", array_noms);
         intent.putExtra("contador", contador);
         startActivityForResult(intent, 1);
+    }
+
+    private void gotoStartGame() {
+        Intent intent = new Intent(this, Quiz.class);
+        intent.putExtra("array_noms", array_noms);
+        intent.putExtra("contador", contador);
+        startActivity(intent);
     }
 }

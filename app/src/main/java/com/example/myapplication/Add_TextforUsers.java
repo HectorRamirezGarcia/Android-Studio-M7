@@ -12,6 +12,7 @@ public class Add_TextforUsers extends AppCompatActivity {
 
     String [] array_noms;
     int contador;
+    int cantidad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
